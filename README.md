@@ -1,3 +1,3 @@
-# Shopping List App Challenge
+# Dogs API Challenge :dog:
 
-This repo contains starter files for the *Shopping List App* challenge.
+This repo contains starter files for the Dogs API* challenge.
