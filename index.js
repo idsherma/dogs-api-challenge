@@ -23,12 +23,11 @@
 
                         dogData.forEach(function (dogData, index) {
                             console.log(dogData);
-                            dogArr.push(
-                                `<img src=${dogData}>`
-                            );
+                            dogArr.push(`<img src=${dogData}>`);
                         });
 
-                        return `${dogArr}`;
+                        let newDogArr = dogArr.join(' ');
+                        return `${newDogArr}`;
                     } 
 
                     function render() {
