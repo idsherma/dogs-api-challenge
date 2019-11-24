@@ -3,7 +3,7 @@
     }(function($, window, document) {
 
         'use strict';
-
+        
         function getDogImage(num) {
             let numParameter = num;
             const URL = 'https://dog.ceo/api/breeds/image/random/';
@@ -24,7 +24,7 @@
             function accessDogData() {
                 let dogArr = [];
 
-                dogData.forEach(function (dogData, index) {
+                dogData.forEach((dogData, index) => {
                     console.log(dogData);
                     dogArr.push(`<img src=${dogData}>`);
                 });
@@ -40,6 +40,7 @@
 
             render();
         }
+
 
         function watchForm() {
             $('form').submit(event => {
