@@ -9,35 +9,36 @@
             const URL = 'https://dog.ceo/api/breeds/image/random/';
 
             const newURL = URL + numParameter;
-            console.log("number of dogs requested was" + " " + `${numParameter}`);
+            console.log(`number of dogs requested was ${`${numParameter}`}`);
+            
 
             fetch(newURL)
-                .then(response => {
-                    return response.json()
-                })
-                .then(data => {
-                    let dogData = data.message;
+                .then(response => response.json())
+                .then(data => 
+                    displayResults(data))
+        }
 
-                    function accessDogData() {
-                        let dogArr = [];
+        function displayResults(data) {
+            let dogData = data.message;
 
-                        dogData.forEach(function (dogData, index) {
-                            console.log(dogData);
-                            dogArr.push(`<img src=${dogData}>`);
-                        });
+            function accessDogData() {
+                let dogArr = [];
 
-                        let newDogArr = dogArr.join(' ');
-                        return `${newDogArr}`;
-                    } 
+                dogData.forEach(function (dogData, index) {
+                    console.log(dogData);
+                    dogArr.push(`<img src=${dogData}>`);
+                });
 
-                    function render() {
-                        let dogPhotoString = accessDogData();
-                        $('#dog-list').html(dogPhotoString);
-                    }
-    
-                    render();
-                    
-                })
+                let newDogArr = dogArr.join(' '); 
+                return `${newDogArr}`;
+            } 
+
+            function render() {
+                let dogPhotoString = accessDogData();
+                $('#dog-list').html(dogPhotoString);
+            }
+
+            render();
         }
 
         function watchForm() {
